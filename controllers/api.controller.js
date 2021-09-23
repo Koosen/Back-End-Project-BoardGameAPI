@@ -1,0 +1,3 @@
+exports.getEndpoints = (req, res) => {
+    
+}
