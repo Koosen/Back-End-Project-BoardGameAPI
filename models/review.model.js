@@ -1,8 +1,17 @@
 const db = require("../db/connection");
 
+//model for GET /api/review/:review_id
 exports.fetchReviewById = (review_id) => {
   return db
-    .query(`SELECT * FROM reviews WHERE review_id = $1`, [review_id])
+    .query(
+      `SELECT reviews.*, COUNT(comment_id) AS comment_count
+     FROM reviews 
+     LEFT JOIN comments ON comments.review_id = reviews.review_id
+     WHERE reviews.review_id = $1
+     GROUP BY reviews.review_id
+     LIMIT 1`,
+      [review_id]
+    )
     .then(({ rows }) => {
       const review = rows[0];
       if (!review) {
@@ -15,6 +24,7 @@ exports.fetchReviewById = (review_id) => {
     });
 };
 
+//model for GET /api/reviews
 exports.fetchReviews = (sort_by, order, category) => {
   let queryStr = "SELECT * FROM reviews ";
   const queryValues = [];
@@ -64,14 +74,15 @@ exports.fetchReviews = (sort_by, order, category) => {
   });
 };
 
+//model for GET /api/reviews/:review_id/comments
 exports.fetchCommentsByReviewId = (review_id) => {
   return db
     .query(
-      `SELECT comment_id, author, co.votes, co.created_at, body
-       FROM comments AS co
-       JOIN reviews AS re
-       ON co.review_id = re.review_id
-       WHERE co.review_id = $1`,
+      `SELECT comment_id, author, comments.votes, comments.created_at, body
+       FROM comments
+       JOIN reviews
+       ON comments.review_id = reviews.review_id
+       WHERE comments.review_id = $1`,
       [review_id]
     )
     .then(({ rows }) => {
@@ -86,6 +97,7 @@ exports.fetchCommentsByReviewId = (review_id) => {
     });
 };
 
+//model for PATCH /api/review/:review_id
 exports.changeReviewVotes = (review_id, inc_votes) => {
   const queryValues = [review_id, inc_votes];
   return db
@@ -108,14 +120,15 @@ exports.changeReviewVotes = (review_id, inc_votes) => {
     });
 };
 
+//model for POST /api/review/:review_id/comments
 exports.createComment = (username, body, review_id) => {
-  const queryValues = [body, 0, username, review_id, Date.now()];
-  return db.query(
-    `INSERT INTO comments
-      (body, votes, author, review_id, created_at)
-      VALUES
-      %L
+  const commentValues = [username, review_id, body]
+  return db
+    .query(
+      `INSERT INTO comments (author, review_id, body)
+      VALUES ($1, $2, $3)
       RETURNING *`,
-    queryValues
-  );
+      commentValues
+    )
+    .then((result) => result.rows);
 };

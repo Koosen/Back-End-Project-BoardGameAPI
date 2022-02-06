@@ -1,0 +1,36 @@
+Script started on 2022-02-05 21:57:33+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="194" LINES="15"]
+]0;rico@rico-B450M-DS3H: ~/Documents/northcoders/backend/be-nc-games[01;32mrico@rico-B450M-DS3H[00m:[01;34m~/Documents/northcoders/backend/be-nc-games[00m$ code .npm start[3Pcode .[Knode listen.js
+Shh! Server is listening on port 9069...
+^C
+]0;rico@rico-B450M-DS3H: ~/Documents/northcoders/backend/be-nc-games[01;32mrico@rico-B450M-DS3H[00m:[01;34m~/Documents/northcoders/backend/be-nc-games[00m$ node run[K[K[Kdb/
+connection.js  data/          seeds/         setup.sql      utils/         
+]0;rico@rico-B450M-DS3H: ~/Documents/northcoders/backend/be-nc-games[01;32mrico@rico-B450M-DS3H[00m:[01;34m~/Documents/northcoders/backend/be-nc-games[00m$ node db/seeds/run-seed.js 
+]0;rico@rico-B450M-DS3H: ~/Documents/northcoders/backend/be-nc-games[01;32mrico@rico-B450M-DS3H[00m:[01;34m~/Documents/northcoders/backend/be-nc-games[00m$ node db/seeds/run-seed.js [12Plisten.js
+Shh! Server is listening on port 9069...
+^C
+]0;rico@rico-B450M-DS3H: ~/Documents/northcoders/backend/be-nc-games[01;32mrico@rico-B450M-DS3H[00m:[01;34m~/Documents/northcoders/backend/be-nc-games[00m$ node listen.js
+Shh! Server is listening on port 9069...
+ReferenceError: hello is not defined
+    at exports.getEndpoints (/home/rico/Documents/northcoders/backend/be-nc-games/controllers/api.controller.js:3:28)
+    at Layer.handle [as handle_request] (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/layer.js:95:5)
+    at next (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/route.js:137:13)
+    at Route.dispatch (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/layer.js:95:5)
+    at /home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/index.js:281:22
+    at Function.process_params (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/index.js:335:12)
+    at next (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/index.js:275:10)
+    at /home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mbody-parser[24m/lib/read.js:130:5
+    at invokeCallback (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mraw-body[24m/index.js:224:16)
+ReferenceError: hello is not defined
+    at exports.getEndpoints (/home/rico/Documents/northcoders/backend/be-nc-games/controllers/api.controller.js:3:28)
+    at Layer.handle [as handle_request] (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/layer.js:95:5)
+    at next (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/route.js:137:13)
+    at Route.dispatch (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/layer.js:95:5)
+    at /home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/index.js:281:22
+    at Function.process_params (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/index.js:335:12)
+    at next (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mexpress[24m/lib/router/index.js:275:10)
+    at /home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mbody-parser[24m/lib/read.js:130:5
+    at invokeCallback (/home/rico/Documents/northcoders/backend/be-nc-games/node_modules/[4mraw-body[24m/index.js:224:16)
+^C
+]0;rico@rico-B450M-DS3H: ~/Documents/northcoders/backend/be-nc-games[0

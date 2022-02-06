@@ -1,6 +1,6 @@
 const { fetchCategories } = require("../models/category.model");
 
-//getCategories
+//controller for GET /api/categories
 exports.getCategories = (req, res, next) => {
   fetchCategories()
     .then((categories) => {

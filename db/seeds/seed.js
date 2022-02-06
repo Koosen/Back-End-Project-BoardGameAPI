@@ -54,8 +54,8 @@ const seed = (data) => {
             comment_id SERIAL PRIMARY KEY,
             author VARCHAR(64) REFERENCES users(username),
             review_id INT REFERENCES reviews(review_id),
-            votes INT,
-            created_at DATE,
+            votes INT DEFAULT 0,
+            created_at TIMESTAMP DEFAULT NOW(),
             body TEXT NOT NULL
           )
         `);

@@ -1,3 +1,3 @@
-// GET /api/users
+//controller for GET /api/users
 
-// GET /api/users/:username
+//controller for GET /api/users/:username
